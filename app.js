@@ -54,5 +54,4 @@ server.delete('/delete/:id', (req, res) => {
   fs.writeFileSync('data.json', JSON.stringify(updatedData));
   res.json({ message: 'Deleted successfully' });
 })
-// const PORT = process.env.PORT || 8080;
 server.listen(8080, () => console.log("Sever listening at:8080"));
