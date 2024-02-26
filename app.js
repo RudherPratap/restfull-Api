@@ -29,7 +29,7 @@ server.post('/add', (req, res) => {
   }
 
   fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
-  res.json({ message: 'Added successfully' });
+  res.status(200).json({ message: 'Added successfully' });
 })
 server.put('/update/:id', (req, res) => {
   const id = req.params.id;
@@ -40,7 +40,7 @@ server.put('/update/:id', (req, res) => {
   if (index !== -1) {
     data[index] = updatedData;
     fs.writeFileSync('data.json', JSON.stringify(data));
-    res.json({ message: 'Updated successfully' });
+    res.status(200).json({ message: 'Updated successfully' });
   }
   else {
     res.status(404).json({ error: 'File not found' });
